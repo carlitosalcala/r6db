@@ -1,13 +1,21 @@
 // src/models/Player.js
 var m = require("mithril")
 
+
 var localList = require("../data/local.json")
 console.log("player loading...")
- 
+
+if (localStorage.getItem("LocalPlayerList")){
+    console.log("loading data from local storage")
+}else{
+    var _Player = JSON.stringify(localList);
+    localStorage.setItem("LocalPlayerList", _Player);
+    console.log("Player saved: " + localStorage.getItem("LocalPlayerList"))
+}
+
 var Player = {
     list: [],
     loadList: function() {
-        console.log("Loaded json file and assigned to Player.list: " + localList[0].name);
         Player.list = localList
         console.log("Loaded json file and assigned to Player.list: " + localList[0].name);
     },
@@ -15,7 +23,7 @@ var Player = {
     load: function(id) { 
         console.log(id);
         alert(id.name);
-        /*
+        /* 
         return m.request({
             method: "GET",
             url: "https://r6db.com/api/v2/players?name=" + id + "&platform=PC&exact=true",

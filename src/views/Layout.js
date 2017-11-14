@@ -17,7 +17,7 @@ module.exports = {
             )
         ) ,            
         m('button.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--colored[type="submit"]'),
-            m("section", vnode.children),
+        m("section", vnode.children),
             
         ])
         

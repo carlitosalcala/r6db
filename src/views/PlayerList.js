@@ -1,7 +1,12 @@
+/*global m */
+var app = app || {};
+
 // src/views/PlayerList.js
 var m = require("mithril")
 
+
 var Player = require("../models/Player")
+
 
 module.exports = {    
     oninit: Player.loadList,
@@ -11,7 +16,10 @@ module.exports = {
                     m("li", { "class": "mdl-list__item" },
                     m("span",{ "class": "mdl-list__item-primary-content" },
                     m("a.player-list-item", 
-                        {href: "/basicdetail/" + player.name, oncreate: m.route.link}, " Nick Uplay: " + player.name )
+                        {href: "/basicdetail/" + player.name, oncreate: m.route.link}, " Nick Uplay: " + player.name +
+                    "f"
+                    
+                    )
                     )                    
                 )) 
         }))
