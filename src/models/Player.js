@@ -1,22 +1,30 @@
 // src/models/Player.js
 var m = require("mithril")
 
-var localList = require("../data/local.json")
+var localList_file = require("../data/local.json")
 console.log("player loading...")
 
-// if (localStorage.getItem("LocalPlayerList")){
-//     console.log("loading data from local storage")
-//     var localList = localStorage.getItem("LocalPlayerList");
-// }else{
-//     var _Player = JSON.stringify(localList);
-//     localStorage.setItem("LocalPlayerList", _Player);
-//     console.log("Player saved: " + localStorage.getItem("LocalPlayerList"))
-// }
+if (localStorage.getItem("LocalPlayerList")){
+    console.log("loading data from local storage")
+    var localList = localStorage.getItem("LocalPlayerList");
+}else{
+    var localListFile = require("../data/local.json")
+    var _Player = JSON.stringify(localListFile);
+    localStorage.setItem("LocalPlayerList", _Player);
+    var localList = localStorage.getItem("LocalPlayerList");    // set data to parse it
+    console.log("Player saved: " + localStorage.getItem("LocalPlayerList"))
+    console.log("OOO");
+}
 
-var Player = {
+var Player = { 
     list: [],
     loadList: function() {
-        Player.list = localList
+        if (localList){
+            Player.list = JSON.parse(localList);
+        }else{
+            console.log("loadlist vacio")
+        }
+
         console.log("Loaded json file and assigned to Player.list: " + localList[0].name);
     },
     current: {}, 
