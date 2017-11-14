@@ -12,7 +12,10 @@ var Player = {
         console.log("Loaded json file and assigned to Player.list: " + localList[0].name);
     },
     current: {}, 
-    load: function(id) {
+    load: function(id) { 
+        console.log(id);
+        alert(id.name);
+        /*
         return m.request({
             method: "GET",
             url: "https://r6db.com/api/v2/players?name=" + id + "&platform=PC&exact=true",
@@ -23,7 +26,7 @@ var Player = {
         .then(function(result) {
             console.log("load funcion done and result was given with value: " + result)
             Player.current = result
-        }) 
+        })  */
     } 
 }
 
