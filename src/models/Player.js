@@ -1,17 +1,17 @@
 // src/models/Player.js
 var m = require("mithril")
 
-
 var localList = require("../data/local.json")
 console.log("player loading...")
 
-if (localStorage.getItem("LocalPlayerList")){
-    console.log("loading data from local storage")
-}else{
-    var _Player = JSON.stringify(localList);
-    localStorage.setItem("LocalPlayerList", _Player);
-    console.log("Player saved: " + localStorage.getItem("LocalPlayerList"))
-}
+// if (localStorage.getItem("LocalPlayerList")){
+//     console.log("loading data from local storage")
+//     var localList = localStorage.getItem("LocalPlayerList");
+// }else{
+//     var _Player = JSON.stringify(localList);
+//     localStorage.setItem("LocalPlayerList", _Player);
+//     console.log("Player saved: " + localStorage.getItem("LocalPlayerList"))
+// }
 
 var Player = {
     list: [],

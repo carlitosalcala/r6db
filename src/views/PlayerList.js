@@ -1,6 +1,3 @@
-/*global m */
-var app = app || {};
-
 // src/views/PlayerList.js
 var m = require("mithril")
 
