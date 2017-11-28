@@ -37,7 +37,7 @@ m.route(document.body, "/player", {
     },
     "/basicdetail/:id": {
         render: function() {
-            return m(Layout, m(PlayerBasicDetail)) // m(PlayerBasicDetail))
+            return m(Layout, m(PlayerBasicDetail, vnode.attrs)) // m(PlayerBasicDetail))
         }
     },
 })

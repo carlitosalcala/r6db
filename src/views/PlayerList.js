@@ -12,10 +12,9 @@ module.exports = {
             return m("ul", { "class": "demo-list-item mdl-list" },
                     m("li", { "class": "mdl-list__item" },
                     m("span",{ "class": "mdl-list__item-primary-content" },
-                    m("a.player-list-item", 
-                        {href: "/basicdetail/" + player.name, oncreate: m.route.link}, " Nick Uplay: " + player.name +
-                    "f"
                     
+                    m("a.player-list-item", 
+                        {href: "/basicdetail/" + player.name, oncreate: m.route.link}, " Nick Uplay: " + player.name
                     )
                     )                    
                 )) 
